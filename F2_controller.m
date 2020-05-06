@@ -18,7 +18,7 @@ Ax=[0 1;-c -b]; Bx=[0;1]; Cx=eye(2); Dx=zeros(2,1);
 Rx=rms_noise_DT/dt_rths;
 [KESTx,Lx,Px] = kalman(ss(Ax,zeros(2,1),Cx(1,:),0),0,Rx,0);
 Axf=Ax-Lx*Cx(1,:); Bxf=[Bx-Lx*Dx(1),Lx]; Cxf=Cx; Dxf=[Dx,zeros(2,1)];
-xinitial=zeros(2,0);
+xinitial=zeros(2,1);
 
 % Phase lead design
 compn=[2*dt_rths 1];
