@@ -11,7 +11,7 @@ e = 0.021072;
 bc=0.36; cc=0.1; % uncertainties
 
 lambda=150; eta=0.1;
-Para=[b c b*bc c*cc lambda eta];
+Para=[b c b*bc c*cc lambda eta sw];
 
 % Kalman filter design
 Rx=rms_noise_DT/dt_rths;
