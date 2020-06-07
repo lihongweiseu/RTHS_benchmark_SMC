@@ -33,7 +33,7 @@ for E_sw=1:E_swN
             F1_input_file
             F2_controller_PI
             F3_simulation_PI
-            F4_evaluation
+            F4_evaluation_PI
             J{E_sw}(ii,:,Building_c)=eval_crit;
             casei=((E_sw-1)*Building_cN+Building_c-1)*num_t+ii;
             caseratio=casei/caseN*100;
