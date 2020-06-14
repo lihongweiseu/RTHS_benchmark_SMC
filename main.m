@@ -20,8 +20,8 @@ switch lower(real_time)
 end
 
 num_add = 0; %num_add = 5;
-num_t = 1+num_add; %E_swN=4; Building_cN=4;
-E_swN=1; Building_cN=1;
+num_t = 1+num_add;
+E_swN=1; Building_cN=1; %E_swN=4; Building_cN=4;
 sw=1; % 0 means without boundary layer; 1 means with.
 J=cell(1,E_swN);
 caseN=E_swN*Building_cN*num_t;
