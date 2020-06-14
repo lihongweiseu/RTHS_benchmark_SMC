@@ -21,7 +21,7 @@ end
 
 num_add = 0;
 num_t = 1+num_add;
-E_swN=4; Building_cN=4;
+E_swN=1; Building_cN=1; %E_swN=4; Building_cN=4;
 J=cell(1,E_swN);
 caseN=E_swN*Building_cN*num_t;
 disp([num2str(caseN),' cases totally.'])
