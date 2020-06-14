@@ -57,6 +57,6 @@ else
 end
 
 
-if max(abs(Force_act.Data)) >= 8900
-    clc, error('ERROR. The actuator capacity was exceeded.')
-end
+% if max(abs(Force_act.Data)) >= 8900
+%     clc, error('ERROR. The actuator capacity was exceeded.')
+% end
