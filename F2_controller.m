@@ -10,7 +10,7 @@ d = 0.00010595;
 e = 0.021072;
 bc=0.36; cc=0.1; % uncertainties
 
-lambda=150; eta=0.1;
+lambda=188; eta=0.1;
 Para=[b c b*bc c*cc lambda eta sw];
 
 % Kalman filter design
