@@ -13,30 +13,25 @@ num_t = 1+num_add;
 E_sw=1; Building_c=4; ii=1;
 F1_input_file
 
-load_system('vRTHS_MDOF_SimRT_PI.slx')           
+load_system('vRTHS_MDOF_SimRT_PI.slx')
+load_system('vRTHS_MDOF_SimRT.slx')
 switch lower(real_time)
     case 'y'
         set_param('vRTHS_MDOF_SimRT_PI/Real-Time Synchronization','Commented','off')
-        set_param('vRTHS_MDOF_SimRT_PI/Missed Ticks','Commented','off')      
+        set_param('vRTHS_MDOF_SimRT_PI/Missed Ticks','Commented','off')
+        set_param('vRTHS_MDOF_SimRT/Real-Time Synchronization','Commented','off')
+        set_param('vRTHS_MDOF_SimRT/Missed Ticks','Commented','off')
     case 'n'
         set_param('vRTHS_MDOF_SimRT_PI/Real-Time Synchronization','Commented','on')
         set_param('vRTHS_MDOF_SimRT_PI/Missed Ticks','Commented','on')
+        set_param('vRTHS_MDOF_SimRT/Real-Time Synchronization','Commented','on')
+        set_param('vRTHS_MDOF_SimRT/Missed Ticks','Commented','on')
 end
 F2_controller_PI
 
 set_param(bdroot,'SolverType','Fixed-step','Solver','ode4','StopTime','tend','FixedStep','dt_rths')
 sim ('vRTHS_MDOF_SimRT_PI')
 RTHS_PI=Num_resp.Data; y_gcPI=y_gc;
-
-load_system('vRTHS_MDOF_SimRT.slx')           
-switch lower(real_time)
-    case 'y'
-        set_param('vRTHS_MDOF_SimRT/Real-Time Synchronization','Commented','off')
-        set_param('vRTHS_MDOF_SimRT/Missed Ticks','Commented','off')      
-    case 'n'
-        set_param('vRTHS_MDOF_SimRT/Real-Time Synchronization','Commented','on')
-        set_param('vRTHS_MDOF_SimRT/Missed Ticks','Commented','on')
-end
 
 sw=0; % 0 means without boundary layer; 1 means with.
 F2_controller
